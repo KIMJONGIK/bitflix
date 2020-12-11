@@ -30,7 +30,7 @@ const DetailPresenter = ({ movie_lst, show_lst, error, loading }) => {
         <title>Wish | Bitflix</title>
       </Helmet>
 
-      {loading ? (
+      {/* {loading ? (
         <Loader />
       ) : (
         <>
@@ -74,7 +74,7 @@ const DetailPresenter = ({ movie_lst, show_lst, error, loading }) => {
               <Message text="검색 결과가 없습니다." color={"#95a5a6"} />
             )}
         </>
-      )}
+      )} */}
     </Container>
   );
 };
