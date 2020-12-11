@@ -11,6 +11,6 @@ const WishContainer = () => {
   // console.log(list);
   // console.log(movie_lst);
   const a = show_lst.then(console.log);
-  return <WishPresenter movie_lst={movie_lst} show_lst={show_lst} />;
+  return "fin"; //<WishPresenter />;
 };
 export default WishContainer;
