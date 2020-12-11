@@ -27,7 +27,7 @@ export default class extends React.Component {
   //  비동기처리는 앞에 async 키워드를 붙여주면 된다.
   async componentDidMount() {
     try {
-      const resoponse = await moviesApi.nowPlaying();
+      // const resoponse = await moviesApi.nowPlaying();
       //  data -> results에 원하는 내용이 있었음
       //  data : { results : [{}, {}, {}...]}
 
@@ -36,7 +36,7 @@ export default class extends React.Component {
         data: { results: nowPlaying },
       } = await moviesApi.nowPlaying();
       // const nowPlaying = (await moviesApi.nowPlaying()).data.results; 와 같다.
-
+      // console.log(nowPlaying);
       const {
         data: { results: upcoming },
       } = await moviesApi.upcoming();
@@ -51,7 +51,7 @@ export default class extends React.Component {
         popular,
       });
 
-      console.log(nowPlaying);
+      // console.log(nowPlaying);
     } catch (error) {
       this.setState({
         error: "영화 정보를 찾을 수 없습니다.",

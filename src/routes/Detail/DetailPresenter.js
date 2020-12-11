@@ -1,9 +1,11 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import styled from "styled-components";
 import Loader from "../../components/Loader";
 import Helmet from "react-helmet";
 import Message from "../../components/Message";
+import { FaRegHeart } from "react-icons/fa";
+
 const Container = styled.div`
   height: calc(100vh - 50px);
   width: 100%;
@@ -49,6 +51,9 @@ const Data = styled.div`
 
 const Title = styled.h3`
   font-size: 32px;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const ItemContainer = styled.div`
@@ -68,11 +73,11 @@ const Overview = styled.p`
   width: 50%;
 `;
 
-const DetailPresenter = ({ result, error, loading }) =>
+const DetailPresenter = ({ result, error, loading, handleClick }) =>
   loading ? (
     <>
       <Helmet>
-        <title>Loading | Ryanflix</title>
+        <title>Loading | BITFLIX</title>
       </Helmet>
       <Loader />
     </>
@@ -83,7 +88,7 @@ const DetailPresenter = ({ result, error, loading }) =>
       <Helmet>
         <title>
           {result.original_title ? result.original_title : result.original_name}{" "}
-          | Ryanflix
+          | BITFLIX
         </title>
       </Helmet>
       <Backdrop
@@ -102,7 +107,10 @@ const DetailPresenter = ({ result, error, loading }) =>
             {result.original_title
               ? result.original_title
               : result.original_name}
+
+            <FaRegHeart color={"red"} onClick={handleClick} />
           </Title>
+
           <ItemContainer>
             <Item>
               {result.release_date

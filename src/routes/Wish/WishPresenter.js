@@ -23,27 +23,12 @@ const Input = styled.input`
   width: 100%;
 `;
 
-const DetailPresenter = ({
-  movieResults,
-  tvResults,
-  searchTerm,
-  error,
-  loading,
-  handleSubmit,
-  updateTerm,
-}) => {
+const DetailPresenter = ({ movie_lst, show_lst, error, loading }) => {
   return (
     <Container>
       <Helmet>
-        <title>Search | Bitflix</title>
+        <title>Wish | Bitflix</title>
       </Helmet>
-      <Form onSubmit={handleSubmit}>
-        <Input
-          placeholder="검색할 영화나 TV 프로그램을 입력하세요"
-          value={searchTerm}
-          onChange={updateTerm}
-        />
-      </Form>
 
       {loading ? (
         <Loader />
@@ -51,7 +36,7 @@ const DetailPresenter = ({
         <>
           {movieResults && movieResults.length > 0 && (
             <Section title="영화 검색 결과">
-              {movieResults.map((movie) => (
+              {movie_lst.map((movie) => (
                 <Poster
                   key={movie.id}
                   id={movie.id}
@@ -68,7 +53,7 @@ const DetailPresenter = ({
           )}
           {tvResults && tvResults.length > 0 && (
             <Section title="TV 검색 결과">
-              {tvResults.map((tv) => (
+              {show_lst.map((tv) => (
                 <Poster
                   key={tv.id}
                   id={tv.id}

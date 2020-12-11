@@ -17,7 +17,7 @@ export default class extends React.Component {
 
   async componentDidMount() {
     try {
-      const resoponse = await tvApi.topRated();
+      // const resoponse = await tvApi.topRated();
 
       const {
         data: { results: topRated },
@@ -37,7 +37,7 @@ export default class extends React.Component {
         airingtoday,
       });
 
-      console.log(topRated);
+      // console.log(topRated);
     } catch (error) {
       this.setState({
         error: "방송 정보를 찾을 수 없습니다.",

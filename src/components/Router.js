@@ -5,6 +5,7 @@ import Home from "../routes/Home";
 import TV from "../routes/TV";
 import Search from "../routes/Search";
 import Detail from "../routes/Detail";
+import Wish from "../routes/Wish";
 
 //  오로지 라우터만 관리하는 컴포넌트가 될 것이다.
 
@@ -17,10 +18,11 @@ export default () => (
       */}
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/tv" exact component={TV} />
-        <Route path="/search" exact component={Search} />
-        <Route path="/movie/:id" exact component={Detail} />
-        <Route path="/show/:id" exact component={Detail} />
+        <Route path="/tv" component={TV} />
+        <Route path="/wish" component={Wish} />
+        <Route path="/search" component={Search} />
+        <Route path="/movie/:id" component={Detail} />
+        <Route path="/show/:id" component={Detail} />
       </Switch>
     </>
   </Router>

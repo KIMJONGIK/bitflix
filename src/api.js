@@ -8,6 +8,18 @@ const api = axios.create({
   },
 });
 
+const api2 = axios.create({
+  baseURL: "http://localhost:5000/",
+});
+
+export const dbApi = {
+  list: () => api2.get("wish"),
+  clickMovie: (id, pathname) => api2.get(`clickmovie/${id}&${pathname}`),
+  clickShow: (id, pathname) => api2.get(`clickshow/${id}&${pathname}`),
+  wishmovie: () => api2.get("wishmovie"),
+  wishshow: () => api2.get("wishshow"),
+};
+
 export const moviesApi = {
   nowPlaying: () => api.get("movie/now_playing"),
   upcoming: () => api.get("movie/upcoming"),

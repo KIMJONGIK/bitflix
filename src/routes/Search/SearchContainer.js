@@ -1,6 +1,6 @@
 import React from "react";
 import { moviesApi, tvApi } from "../../api";
-import Poster from "../../components/Poster";
+// import Poster from "../../components/Poster";
 import SearchPresenter from "./SearchPresenter";
 
 export default class extends React.Component {
